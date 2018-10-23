@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: clojure:alpine
-    working_directory: /home/circleci/compojure-app
+    working_directory: /home/circleci/cljudge
     steps:
       - checkout
 
@@ -14,12 +14,12 @@ jobs:
       - run:
           name: Download dependencies
           command: lein deps
-          working_directory: /home/circleci/compojure-app
+          working_directory: /home/circleci/cljudge
 
       - run:
           name: Run server tests
           command: lein test
-          working_directory: /home/circleci/compojure-app
+          working_directory: /home/circleci/cljudge
       - save_cache:
           key: compojure-app-jars-v1-{{ checksum "project.clj" }}
           paths:
@@ -49,7 +49,7 @@ jobs:
       - run:
           name: Deploy compojure-app to Google App Engine
           command: |
-            gcloud config set project clojure-sample-project
+            gcloud config set project cljudge
             gcloud app deploy
       - run:
           name: discarding all changes
