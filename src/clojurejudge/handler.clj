@@ -5,7 +5,7 @@
 
 (defroutes app-routes
   (GET "/" [] "Hello World and also Hello Tuomo! Tinkering with Circle CI and clojure project autodeploy :-)")
-  (route/not-found "Not Found"))
+  (route/not-found "Not Found")) 
 
 (def app
   (wrap-defaults app-routes site-defaults))
