@@ -7,7 +7,7 @@
   (testing "main route"
     (let [response (app (mock/request :get "/"))]
       (is (= (:status response) 200))
-      (is (= (:body response) "Hello World"))))
+      (is (= (:body response) "Hello World and also Hello Tuomo! Tinkering with Circle CI and clojure project autodeploy :-)"))))
 
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
