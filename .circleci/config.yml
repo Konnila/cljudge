@@ -49,6 +49,7 @@ jobs:
       - run:
           name: Deploy compojure-app to Google App Engine
           command: |
+            gcloud components update
             gcloud config set project cljudge-220312
             gcloud app deploy
       - run:
