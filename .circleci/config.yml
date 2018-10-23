@@ -50,7 +50,6 @@ jobs:
           name: Deploy compojure-app to Google App Engine
           command: |
             gcloud config set project cljudge-220312
-            gcloud config set compute/zone ${GOOGLE_COMPUTE_ZONE}
             gcloud app deploy
       - run:
           name: discarding all changes
