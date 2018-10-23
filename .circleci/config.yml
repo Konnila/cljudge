@@ -49,8 +49,8 @@ jobs:
       - run:
           name: Deploy compojure-app to Google App Engine
           command: |
-            gcloud config set compute/region europe-west
             gcloud config set project cljudge-220312
+            gcloud config set compute/region europe-west
             gcloud app deploy
       - run:
           name: discarding all changes
