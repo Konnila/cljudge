@@ -14,12 +14,12 @@ jobs:
       - run:
           name: Download dependencies
           command: lein deps
-          working_directory: /home/circleci/cljudge
+          working_directory: /home/circleci/cljudge-front
 
       - run:
           name: Run server tests
           command: lein test
-          working_directory: /home/circleci/cljudge
+          working_directory: /home/circleci/cljudge-front
       - save_cache:
           key: compojure-app-jars-v1-{{ checksum "project.clj" }}
           paths:
@@ -50,7 +50,7 @@ jobs:
           name: Deploy compojure-app to Google App Engine
           command: |
             gcloud config list
-            gcloud config set project cljudge
+            gcloud config set project cljudge-front
             gcloud app deploy
       - run:
           name: discarding all changes
