@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: clojure:alpine
-    working_directory: /home/circleci/cljudge
+    working_directory: /home/circleci/cljudge-front
     steps:
       - checkout
 
@@ -32,7 +32,7 @@ jobs:
           - master
     docker:
       - image: google/cloud-sdk:alpine
-    working_directory: /home/circleci/compojure-app
+    working_directory: /home/circleci/cljudge-front
     steps:
       - checkout
 
